@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "33304739732",
+    "firebase_url": "https://attendease-e07ce-default-rtdb.firebaseio.com",
+    "project_id": "attendease-e07ce",
+    "storage_bucket": "attendease-e07ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:33304739732:android:97fba12fe6cc4be6b6d981",
+        "android_client_info": {
+          "package_name": "com.example.attend_ease"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-wTgt_hBftgUegt0RIwZRz-1Y3m4Dl6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
