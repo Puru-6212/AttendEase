@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/user_provider.dart';
 import 'login_screen.dart';
-import 'attendance_sheet_screen.dart'; // Import the new attendance sheet screen
+import 'attendance_sheet_screen.dart';
+import 'notes_screen.dart'; // Import the new notes screen
 
 class TeacherDashboard extends StatelessWidget {
   final List<String> subjects = [
@@ -41,7 +42,8 @@ class TeacherDashboard extends StatelessWidget {
                 leading: Icon(Icons.note),
                 title: Text('Notes'),
                 onTap: () {
-                  // Handle Notes selection
+                  Navigator.pop(context); // Close the bottom sheet
+                  _navigateToNotesScreen(context);
                 },
               ),
             ],
@@ -60,6 +62,15 @@ class TeacherDashboard extends StatelessWidget {
     );
   }
 
+  void _navigateToNotesScreen(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => NotesScreen(), // Navigate to the notes screen
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final userProvider = Provider.of<UserProvider>(context);
@@ -68,7 +79,7 @@ class TeacherDashboard extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Teacher Dashboard'),
-        backgroundColor: Colors.blue,
+        backgroundColor: const Color.fromARGB(255, 156, 210, 255),
         actions: [
           IconButton(
             icon: Icon(Icons.logout),
@@ -110,7 +121,7 @@ class TeacherDashboard extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
-                        backgroundColor: Colors.blue[600],
+                        backgroundColor: Color.fromARGB(255, 105, 183, 252),
                       ),
                       child: Text(
                         subjects[index],
